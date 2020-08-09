@@ -1,14 +1,12 @@
 package com.feliperbleite.eventcounter.domain;
 
-import android.os.Build;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
+import androidx.room.Entity;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
+@Entity()
 public class Event {
     private LocalDateTime timestamp;
     private String type = "generic";
