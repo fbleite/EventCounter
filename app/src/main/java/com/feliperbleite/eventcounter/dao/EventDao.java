@@ -9,6 +9,8 @@ import androidx.room.Update;
 
 import com.feliperbleite.eventcounter.domain.Event;
 
+import java.util.List;
+
 @Dao
 public interface EventDao {
 
@@ -17,6 +19,9 @@ public interface EventDao {
 
     @Query("SELECT * FROM events")
     Cursor findAll();
+
+    @Query("SELECT * FROM events ORDER BY id DESC")
+    List<Event> findAllList();
 
     @Query("DELETE FROM events where id = :id")
     int delete(long id);
